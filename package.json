@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run setup-schema:dev && next dev",
+    "build": "next build && npm run setup-schema:prod",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf node_modules .next",
+    "setup-schema": "npx ts-node scripts/schema-manager/setup.ts",
+    "setup-schema:dev": "APP_ENV=development npm run setup-schema",
+    "setup-schema:prod": "APP_ENV=production npm run setup-schema"
   },
   "dependencies": {
+    "@tigrisdata/core": "1.0.0-beta.12",
+    "chalk": "4.1.2",
     "next": "13.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -19,6 +25,7 @@
     "@types/react-dom": "18.0.8",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
+    "prettier": "2.7.1",
     "typescript": "4.8.4"
   }
 }
