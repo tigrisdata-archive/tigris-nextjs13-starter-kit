@@ -3,8 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import * as Log from './logger';
 
-// TODO: allow user to override this
-const SCHEMAS_ROOT = 'lib/models';
+const SCHEMAS_ROOT = 'models';
 const DB_DIR_SUFFIX = '-db';
 const COLL_FILE_SUFFIX = '-schema.ts';
 
