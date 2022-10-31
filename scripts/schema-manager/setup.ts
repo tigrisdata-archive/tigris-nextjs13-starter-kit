@@ -19,17 +19,8 @@ async function main() {
     process.exit(1);
   }
   // setup client
-  const tigrisUri = process.env.TIGRIS_URI;
-  const clientConfig: TigrisClientConfig = { serverUrl: tigrisUri };
-
-  if (process.env.TIGRIS_CLIENT_ID) {
-    clientConfig.clientId = process.env.TIGRIS_CLIENT_ID;
-  }
-  if (process.env.TIGRIS_CLIENT_SECRET) {
-    clientConfig.clientSecret = process.env.TIGRIS_CLIENT_SECRET;
-  }
-  const tigrisClient = new Tigris(clientConfig);
-  Log.info(`Using Tigris at ${tigrisUri}`);
+  const tigrisClient = new Tigris();
+  Log.info(`Using Tigris at ${process.env.TIGRIS_URI}`);
 
   for (const dbManifest of tigrisFileManifest) {
     // create DB
@@ -40,7 +31,7 @@ async function main() {
       // Create a collection
       const collection = await tigrisDb.createOrUpdateCollection(coll.collectionName, coll.schema);
       Log.event(
-        `Created collection: ${collection.collectionName} with schema: ${coll.schemaName} in db: ${dbManifest.dbName}`
+        `Created collection: ${collection.collectionName} from schema: ${coll.schemaName} in db: ${dbManifest.dbName}`
       );
     }
   }
