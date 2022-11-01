@@ -21,27 +21,21 @@ https://tigris-nextjs13-starter-kit.vercel.app/
 # ⚙️ Deploying the app
 
 You have two options to run this Next.js 13 app:
-<details>
-<summary>1. Deploy on Vercel using Tigris Cloud (Recommended)</summary>
 
-## 📖 Vercel & Tigris Cloud (Recommended)
+## 📖 1. Vercel & Tigris Cloud (Recommended)
 
-### Prerequisites
+All you need is a [Github](https://github.com), [Vercel][Vercel-url] and Tigris 
+account([sign up for a free account](https://www.tigrisdata.com/beta#signup-form)). Now, Hit "Deploy"
+and follow instructions to deploy app to your Vercel account
 
-1. A GitHub account. [Sign up here for a free account](https://github.com) if you don't have one.
-2. A Vercel account for deploying app. [Sign up here for a free account][Vercel-url] if you don't have one.
-3. A Tigris account. [Sign up here for a free account](https://www.tigrisdata.com/beta#signup-form) if you don't have one.
-
-### Instructions
-1. [Tigris integration](https://vercel.com/integrations/tigris) with Vercel will automatically fetch 
-access keys to populate [Environment Variables](.env.example) when deploying app. Now just hit "Deploy"
-and follow instructions to fork this repo and deploy app to your Vercel account
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftigrisdata%2Ftigris-nextjs13-starter-kit&demo-title=Tigris%20and%20Next.js%2013%20demo%20To-do%20app&demo-description=A%20To-do%20list%20webapp%20using%20Next%20js%2013%20and%20Vercel&integration-ids=oac_Orjx197uMuJobdSaEpVv2Zn8)
+[![Deploy with Vercel](https://vercel.com/button)][Deploy-url]
 
 :tada: All done. You should be able to use app on the URL provided by Vercel. Feel free to play around
 or do a [code walkthrough](#code-walkthrough) next :tada:
-</details>
+
+> [Tigris integration](https://vercel.com/integrations/tigris) with Vercel will automatically fetch
+access keys to populate [Environment Variables](.env.example) when deploying app.
+
 
 <details>
 <summary>2. Running Next.js server & Tigris dev environment on your local computer</summary>
@@ -90,7 +84,7 @@ around or do a [code walk-through](#code-walkthrough) next :tada:
 │   └── page.tsx
 ├── models
 │   └── tigris
-│       └── todoStarterApp
+│       └── nextjsTodoApp
 │           └── todoItems.ts
 └── pages
     ├── index.tsx
@@ -113,7 +107,7 @@ as pages, layouts and much more.
 <details>
 <summary> 🪢️ Tigris schema definition</summary>
 
-[models/tigris/todoStarterApp/todoItems.ts](models/tigris/nextjsTodoApp/todoItems.ts) - The to-do list app
+[models/tigris/nextjsTodoApp/todoItems.ts](models/tigris/nextjsTodoApp/todoItems.ts) - The to-do list app
 has a single collection `todoItems` that stores the to-do items in `nextjsTodoApp` database. The
 Database and Collection get automatically provisioned by the [setup script](scripts/setup.ts).
 
@@ -180,6 +174,7 @@ Thanks again!
 [TypeScript-url]: https://www.typescriptlang.org/
 [Vercel]: https://img.shields.io/badge/vercel-F22F46?style=for-the-badge&logo=vercel&logoColor=white
 [Vercel-url]: https://vercel.com/
+[Deploy-url]: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftigrisdata%2Ftigris-nextjs13-starter-kit&demo-title=Tigris%20and%20Next.js%2013%20demo%20To-do%20app&demo-description=A%20To-do%20list%20webapp%20using%20Next%20js%2013%20and%20Vercel&integration-ids=oac_Orjx197uMuJobdSaEpVv2Zn8
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/blog/next-13
 [license-shield]: https://img.shields.io/github/license/tigrisdata/tigris-vercel-starter.svg?style=for-the-badge
