@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import EachTodo from './EachToDo';
 import LoaderWave from './LoaderWave';
-import { TodoItem } from '../../lib/schema';
+import { TodoItem } from '../../models/tigris/nextjsTodoApp/todoItems';
 
 const Home = () => {
   // This is the input field
@@ -123,7 +123,7 @@ const Home = () => {
   // Search query
   /*
   'searchQuery' method takes the state from 'textInput' and send it over to the 'api/items/search' endpoint via a query param 'q'.
-  The response is the same as the response from "fetch('/api/items')", an array of TodoItems if successful. 
+  The response is the same as the response from "fetch('/api/items')", an array of TodoItems if successful.
   */
   const searchQuery = () => {
     if (queryCheckWiggle()) {

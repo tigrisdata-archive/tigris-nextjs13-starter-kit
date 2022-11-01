@@ -84,7 +84,7 @@ around or do a [code walk-through](#code-walkthrough) next :tada:
 ```text
 ├── package.json
 ├── lib
-│   ├── schema.ts
+│   ├── todoItems.ts
 │   ├── tigris.ts
 └── pages
     ├── index.tsx
@@ -100,7 +100,7 @@ around or do a [code walk-through](#code-walkthrough) next :tada:
 <details>
 <summary> 🗄️ Tigris schema definition</summary>
 
-[lib/schema.ts](lib/schema.ts) - The to-do list app has a single collection `todoItems` that stores the to-do items.
+[lib/todoItems.ts](models/tigris/nextjsTodoApp/todoItems.ts) - The to-do list app has a single collection `todoItems` that stores the to-do items.
 </details>
 
 <details>

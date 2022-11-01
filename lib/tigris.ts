@@ -1,5 +1,6 @@
 import { DB, Tigris, TigrisClientConfig } from '@tigrisdata/core';
-import { DB_NAME } from './schema';
+
+const DB_NAME = 'nextjsTodoApp';
 
 if (!process.env.TIGRIS_URI) {
   throw new Error('Cannot find TIGRIS_URI environment variable ');

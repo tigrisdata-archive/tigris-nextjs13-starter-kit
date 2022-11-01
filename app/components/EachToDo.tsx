@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
-import { TodoItem } from '../../lib/schema';
+import { TodoItem } from '../../models/tigris/nextjsTodoApp/todoItems';
 
 type Props = {
   toDoItem: TodoItem;

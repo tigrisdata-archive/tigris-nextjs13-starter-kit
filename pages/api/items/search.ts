@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { COLLECTION_NAME, TodoItem } from '../../../lib/schema';
+import { COLLECTION_NAME, TodoItem } from '../../../models/tigris/nextjsTodoApp/todoItems';
 import { SearchRequest } from '@tigrisdata/core/dist/search/types';
 import tigrisDb from '../../../lib/tigris';
 
