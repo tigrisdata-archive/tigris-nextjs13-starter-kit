@@ -9,7 +9,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={rubik.className}>
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <title>Todo App using Next.js + Tigris</title>
+        <title>Todo App using Next.js 13 + Tigris</title>
         <meta name="description" content="Tigris app tutorial" />
       </head>
       <body>{children}</body>

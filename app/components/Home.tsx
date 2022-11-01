@@ -172,7 +172,7 @@ const Home = () => {
   return (
     <div>
       <div className="container">
-        <h2>Sample Todo app using Next.js and Tigris</h2>
+        <h2>Sample Todo app using Next.js 13 and Tigris</h2>
 
         {/* Search Header */}
         <div className="searchHeader">
