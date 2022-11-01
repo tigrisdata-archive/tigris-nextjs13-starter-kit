@@ -5,22 +5,22 @@
 [![Vercel][Vercel]][Vercel-url]
 [![Apache License][license-shield]][license-url]
 
-# ⚡ ️Tigris example app on Next.js - Todo list
+# ⚡ ️Tigris example app using Next.js 13 - Todo list
 
 A simple todo app built on [Next.js 13][Next-url] and [Tigris](https://docs.tigrisdata.com/) 
 using [TypeScript client](https://docs.tigrisdata.com/typescript/), deployed on [Vercel][Vercel-url].
 
 #### Project demo
 
-<a href="https://tigris-nextjs-13-todo-list.vercel.app/">
+<a href="https://tigris-nextjs13-starter-kit.vercel.app/">
     <img src="public/readme/todo_app_screenshot.jpg" alt="Todo web app">
 </a>
 
-https://tigris-nextjs-13-todo-list.vercel.app/
+https://tigris-nextjs13-starter-kit.vercel.app/
 
 # ⚙️ Deploying the app
 
-You have two options to run this Next.js app:
+You have two options to run this Next.js 13 app:
 <details>
 <summary>1. Deploy on Vercel using Tigris Cloud (Recommended)</summary>
 
@@ -37,7 +37,7 @@ You have two options to run this Next.js app:
 access keys to populate [Environment Variables](.env.example) when deploying app. Now just hit "Deploy"
 and follow instructions to fork this repo and deploy app to your Vercel account
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftigrisdata%2Ftigris-vercel-starter&project-name=todo-list-app-tigris&repo-name=todo-list-webapp-tigris&demo-title=My%20To-do%20list%20webapp&demo-description=A%20To-do%20list%20webapp%20using%20NextJS%20and%20Tigris&integration-ids=oac_Orjx197uMuJobdSaEpVv2Zn8)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftigrisdata%2Ftigris-nextjs13-starter-kit&demo-title=Tigris%20and%20Next.js%2013%20demo%20To-do%20app&demo-description=A%20To-do%20list%20webapp%20using%20Next%20js%2013%20and%20Vercel&integration-ids=oac_Orjx197uMuJobdSaEpVv2Zn8)
 
 :tada: All done. You should be able to use app on the URL provided by Vercel. Feel free to play around
 or do a [code walkthrough](#code-walkthrough) next :tada:
@@ -84,8 +84,14 @@ around or do a [code walk-through](#code-walkthrough) next :tada:
 ```text
 ├── package.json
 ├── lib
-│   ├── todoItems.ts
-│   ├── tigris.ts
+│   └── tigris.ts
+├── app
+│   ├── layout.tsx
+│   └── page.tsx
+├── models
+│   └── tigris
+│       └── todoStarterApp
+│           └── todoItems.ts
 └── pages
     ├── index.tsx
     └── api
@@ -98,9 +104,22 @@ around or do a [code walk-through](#code-walkthrough) next :tada:
 </details>
 
 <details>
-<summary> 🗄️ Tigris schema definition</summary>
+<summary> 📣 The new `app` directory</summary>
 
-[lib/todoItems.ts](models/tigris/nextjsTodoApp/todoItems.ts) - The to-do list app has a single collection `todoItems` that stores the to-do items.
+[/app](app/) - Next.js 13 introduces a new `app/` directory to be a single place for all your routes
+as pages, layouts and much more.
+</details>
+
+<details>
+<summary> 🪢️ Tigris schema definition</summary>
+
+[models/tigris/todoStarterApp/todoItems.ts](models/tigris/nextjsTodoApp/todoItems.ts) - The to-do list app
+has a single collection `todoItems` that stores the to-do items in `nextjsTodoApp` database. The
+Database and Collection get automatically provisioned by the [setup script](scripts/setup.ts).
+
+This is an inspiration from Next.js based file system router. Create a folder or drop a schema file 
+inside database folder under `models/tigris/`, and you're able to instantly create Databases and 
+Collections in Tigris for your application.
 </details>
 
 <details>
@@ -134,7 +153,7 @@ All the Next.js API routes are defined under `pages/api/`. We have three files e
 
 # 🚀 Next steps
 
-In a few steps, we learnt how to bootstrap a Next.js app using Tigris and deploy it on Vercel. Feel
+In a few steps, we learnt how to bootstrap a Next.js 13 app using Tigris and deploy it on Vercel. Feel
 free to add more functionalities or customize App for your use-case and learn more about 
 [Tigris data platform](https://docs.tigrisdata.com/overview/) 
 
