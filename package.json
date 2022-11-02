@@ -5,8 +5,8 @@
   "scripts": {
     "predev": "APP_ENV=development npm run setup",
     "dev": "npm run setup:dev && next dev",
-    "prebuild": "APP_ENV=production npm run setup",
     "build": "next build",
+    "postbuild": "APP_ENV=production npm run setup",
     "start": "next start",
     "lint": "next lint --max-warnings=0 .",
     "lint:fix": "eslint --fix .",
