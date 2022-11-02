@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:run": "next dev",
+    "predev": "APP_ENV=development npm run setup",
     "dev": "npm run setup:dev && next dev",
-    "build": "next build && npm run setup:prod",
+    "prebuild": "APP_ENV=production npm run setup",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings=0 .",
     "lint:fix": "eslint --fix .",
@@ -13,8 +14,6 @@
     "prettier:fix": "prettier --write .",
     "clean": "rm -rf node_modules .next",
     "setup": "npx ts-node scripts/setup.ts",
-    "setup:dev": "APP_ENV=development npm run setup",
-    "setup:prod": "APP_ENV=production npm run setup",
     "prepare": "husky install"
   },
   "dependencies": {
