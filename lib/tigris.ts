@@ -1,12 +1,6 @@
 import { DB, Tigris } from '@tigrisdata/core';
-import { Log } from '@tigrisdata/core/dist/utils/logger';
 
 const DB_NAME = 'nextjsTodoApp';
-
-if (!process.env.TIGRIS_URI) {
-  throw new Error('Cannot find TIGRIS_URI environment variable ');
-}
-Log.info(`Using Tigris at: ${process.env.TIGRIS_URI}`);
 
 declare global {
   // eslint-disable-next-line no-var
@@ -15,8 +9,11 @@ declare global {
 
 let tigrisDb: DB;
 
+// Caching the client because `next dev` would otherwise create a
+// new connection on every file save while previous connection is active due to
+// hot reloading. However, in production, Next.js would completely tear down before
+// restarting, thus, disconnecting and reconnecting to Tigris.
 if (process.env.NODE_ENV !== 'production') {
-  // re-use the same connection in dev
   if (!global.tigrisDb) {
     const tigrisClient = new Tigris();
     global.tigrisDb = tigrisClient.getDatabase(DB_NAME);
