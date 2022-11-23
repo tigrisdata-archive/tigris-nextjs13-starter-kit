@@ -3,7 +3,7 @@ import { TigrisCollectionType, TigrisDataTypes, TigrisSchema } from '@tigrisdata
 export const COLLECTION_NAME = 'todoItems';
 
 export interface TodoItem extends TigrisCollectionType {
-  id?: number;
+  id: number;
   text: string;
   completed: boolean;
 }
