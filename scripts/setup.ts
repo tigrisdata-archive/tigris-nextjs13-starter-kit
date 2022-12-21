@@ -1,6 +1,6 @@
 import { Tigris } from '@tigrisdata/core';
 import { loadEnvConfig } from '@next/env';
-import { TodoItem } from '../models/tigris/todoItems';
+import { TodoItem } from '../db/models/todoItems';
 
 // Run the config loader only when not executing within next runtime
 if (process.env.NODE_ENV === undefined) {
