@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import EachTodo from './EachToDo';
 import LoaderWave from './LoaderWave';
-import { TodoItem } from '../../models/tigris/nextjsTodoApp/todoItems';
+import { TodoItem } from '../../db/models/todoItems';
 
 const Home = () => {
   // This is the input field
