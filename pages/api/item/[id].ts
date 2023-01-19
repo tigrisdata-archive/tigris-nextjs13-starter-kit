@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 async function handleGet(req: NextApiRequest, res: NextApiResponse<Data>, itemId: number) {
   try {
     const itemsCollection = tigrisDb.getCollection<TodoItem>(TodoItem);
-    const item = await itemsCollection.findOne({ id: itemId });
+    const item = await itemsCollection.findOne({ filter: { id: itemId } });
     if (!item) {
       res.status(404).json({ error: 'No item found' });
     } else {
@@ -58,7 +58,7 @@ async function handlePut(req: NextApiRequest, res: NextApiResponse<Data>) {
 async function handleDelete(req: NextApiRequest, res: NextApiResponse<Data>, itemId: number) {
   try {
     const itemsCollection = tigrisDb.getCollection<TodoItem>(TodoItem);
-    const status = (await itemsCollection.deleteOne({ id: itemId })).status;
+    const status = (await itemsCollection.deleteOne({ filter: { id: itemId } })).status;
     if (status === 'deleted') {
       res.status(200).json({});
     } else {
