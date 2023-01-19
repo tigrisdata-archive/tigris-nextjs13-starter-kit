@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "APP_ENV=development npm run setup",
+    "predev": "npm run setup",
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "APP_ENV=production npm run setup",
+    "postbuild": "npm run setup",
     "start": "next start",
     "lint": "next lint --max-warnings=0 .",
     "lint:fix": "eslint --fix .",
